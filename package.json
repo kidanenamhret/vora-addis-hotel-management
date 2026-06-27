@@ -1,0 +1,16 @@
+{
+  "name": "vora-addis-hotel-management-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Enterprise hotel management system for Vora Addis Hotel in Bambis.",
+  "scripts": {
+    "dev": "docker compose up --build",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
+
