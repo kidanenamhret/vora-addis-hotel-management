@@ -7,7 +7,7 @@ A full-stack, enterprise-grade **Hotel Management System** for Vora Addis Hotel,
 ## Tech Stack
 
 | Layer | Technology |
-|---|---|
+| --- | --- |
 | **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion, React Router v6, Lucide Icons |
 | **Backend** | Node.js 22+, Express.js, JWT authentication, RBAC, bcrypt |
 | **Database** | SQLite (`node:sqlite` — embedded, zero-config, no server required) |
@@ -18,6 +18,7 @@ A full-stack, enterprise-grade **Hotel Management System** for Vora Addis Hotel,
 ## Features
 
 ### 🌐 Public Website
+
 - **Home page** — animated hero, animated statistics counter, facilities grid, featured reviews, call-to-action booking widget with check-in/out dates pre-fill
 - **Rooms & Suites page** — filterable catalog (type, guests, max price), alternating layout cards with:
   - **Auto-looping image carousel** (3-second interval, loops infinitely, manual arrows also work)
@@ -33,8 +34,9 @@ A full-stack, enterprise-grade **Hotel Management System** for Vora Addis Hotel,
 - **My Bookings** — guest self-service booking history
 
 ### 🏨 Room Types
+
 | Type | Bed | Capacity | From |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Single | Single | 1 guest | $89 /night |
 | Twin | Twin Beds | 2 guests | $99 /night |
 | Standard | Double | 2 guests | $120 /night |
@@ -43,15 +45,19 @@ A full-stack, enterprise-grade **Hotel Management System** for Vora Addis Hotel,
 | Suite | King + Living area | 4 guests | $350 /night |
 
 ### 📺 In-Room Smart Hub
+
 Every room detail page includes an interactive Smart Hub simulation:
+
 - **AI Pro TV** — greets the guest by name fetched live from the PMS (`GET /public/rooms/:roomNumber/active-guest`). Controls ambient lighting, browses a channel menu, and places in-room dining orders.
 - **Smart Telephone** — speed-dial panel for Reception, Room Service, Housekeeping, and Wake-up Call with scripted receptionist responses.
 
 ### 🌙 Dark / Light Mode
+
 - Toggle in the header (Moon / Sun icon)
 - Preference is **persisted to `localStorage`** (`vora_dark_mode`) and restored on every page load
 
 ### 🔐 Authentication & Staff Portal
+
 - Guest self-registration and login
 - Staff login with **Role-Based Access Control (RBAC)**:
   - `Administrator`, `Manager`, `Receptionist`, `Accountant`, `Guest`
@@ -59,6 +65,7 @@ Every room detail page includes an interactive Smart Hub simulation:
 - Staff Dashboard (separate from the public site)
 
 ### 📊 Management Dashboard
+
 - Room management (CRUD, status updates)
 - Reservations (create, modify, cancel, confirm)
 - Check-in / Check-out workflow
@@ -70,10 +77,12 @@ Every room detail page includes an interactive Smart Hub simulation:
 ## Prerequisites
 
 ### For local development (no Docker)
+
 - **Node.js 22+** and **npm 10+**
 - No database server needed — SQLite is embedded
 
 ### For Docker setup
+
 - Docker Desktop (or Docker Engine + Docker Compose)
 
 ---
@@ -81,11 +90,13 @@ Every room detail page includes an interactive Smart Hub simulation:
 ## Run Locally (Recommended for Development)
 
 ### 1. Install root workspace dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Start the backend
+
 ```bash
 cd backend
 npm install
@@ -98,6 +109,7 @@ The backend initialises the SQLite database and seeds demo data automatically on
 - Health check: `http://localhost:5000/health`
 
 ### 3. Start the frontend (new terminal)
+
 ```bash
 cd frontend
 npm install
@@ -118,13 +130,14 @@ docker compose up --build
 ```
 
 | URL | Description |
-|---|---|
+| --- | --- |
 | `http://localhost` | Nginx entrypoint (recommended) |
 | `http://localhost:5173` | Frontend direct |
 | `http://localhost:5000` | Backend API direct |
 | `http://localhost:5000/health` | Health check |
 
 Stop:
+
 ```bash
 docker compose down
 ```
@@ -200,14 +213,13 @@ vora-addis-hms/
 All staff accounts share the same default password. Use these to log in to the Staff Dashboard.
 
 | Role | Email | Password |
-|---|---|---|
-| Administrator | admin@voraaddis.com | Vora@2026 |
-| Manager | manager@voraaddis.com | Vora@2026 |
-| Receptionist | receptionist@voraaddis.com | Vora@2026 |
-| Accountant | accountant@voraaddis.com | Vora@2026 |
+| --- | --- | --- |
+| Administrator | <admin@voraaddis.com> | Vora@2026 |
+| Manager | <manager@voraaddis.com> | Vora@2026 |
+| Receptionist | <receptionist@voraaddis.com> | Vora@2026 |
+| Accountant | <accountant@voraaddis.com> | Vora@2026 |
 
 > ⚠️ Change all passwords before any production deployment.
-
 
 ---
 
